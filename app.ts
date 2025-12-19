@@ -6,7 +6,9 @@ import { getJobById } from "./controllers/jobCon.js";
 
 const app = express();
 app.use(cors({
-    origin: "https://mployee-assignment-frontend.vercel.app/"
+  origin: "https://mployee-assignment-frontend.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: false,
 }));
 app.use(express.json());
 app.use("/api", jobRoutes);
